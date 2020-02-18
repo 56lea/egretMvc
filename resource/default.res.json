@@ -1,0 +1,21 @@
+{
+	"groups":[
+	{
+		"keys":"base",
+		"name":"preload"
+	},{
+		"keys":"Maps_module",
+		"name":"baseRes"
+	}],
+	"resources":[
+	{
+		"name":"Maps_module",
+		"type":"json",
+		"url":"config/Maps.json"
+	},
+	{
+		"name":"base",
+		"type":"sheet",
+		"url":"assets/base.json"
+	}]
+}
