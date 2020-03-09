@@ -12,7 +12,7 @@ class PqView extends PqMvc {
         this.addType("panel", this.parsingPanel, this);
         this.addType("img", this.parsingImg, this);
         this.addType("btn", this.parsingBtn, this);
-        //this.addType("dg",this.parssingDg,this);
+        this.addType("dg",this.parssingDg,this);
         this.addType("txt", this.parsingTxt, this);
         this.addType("mtxt", this.parsingMTxt, this);
         this.addType("base64", this.parsingBase64, this);
@@ -157,13 +157,13 @@ class PqView extends PqMvc {
         sp.touchEnabled = true;
         return sp;
     }
-    // protected parssingDg(v:ConfigVo){
-    //     let dg = DragonHelper.createdb(v.res, v.type);
-    //     dg.animation.play(v.action);
-    //     dg.touchEnabled = true;
-    //     dg.touchChildren = false;
-    //     return dg;
-    // }
+    protected parssingDg(v:ConfigVo){
+        let dg = DragonHelper.createdb(v.res, v.type||"MovieClip");
+        dg.animation.play(v.action||"newAnimation");
+        dg.touchEnabled = true;
+        dg.touchChildren = false;
+        return dg;
+    }
     protected parsingTxt(v: ConfigVo): egret.TextField {
         var txt: egret.TextField = UiHelper.createTxt({ text: v.text, type: v.type,font:v.font,displayAsPassword:v.isPassword, align: v.align ? v.align : "left",bold:v.bold, color: v.color,border:v.border, size: v.size ? v.size : 18, touchEnabled: v.touchEnabled ? v.touchEnabled : false, width: v.width ? v.width : 120, height: v.height ? v.height : 30 });
         //if(v.filter)UiHelper.filter(txt,0x9e5012,0.5,3,3,10);
